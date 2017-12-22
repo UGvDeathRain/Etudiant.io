@@ -13,6 +13,13 @@ class EtudiantController extends Controller
      */
     public function index()
     {
-        return new Response('Welcome to your new controller!');
+        $em = $this->getDoctrine()->getManager();
+
+        $etudiants = $em->getRepository("App:Etudiant")->findAll();
+
+        dump($etudiants);
+        return $this->render("listeEtudiants.html.twig", [
+            'listeEtudiant' => $etudiants
+        ]);
     }
 }

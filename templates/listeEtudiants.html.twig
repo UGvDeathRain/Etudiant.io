@@ -1,0 +1,12 @@
+{%  extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <!-- Ici on met le css -->
+{% endblock %}
+
+{% block body %}
+    <t1>Liste des étudiants</t1>
+    {% for etudiant in listeEtudiant %}
+        <p>{{ etudiant.nom }}</p>
+    {% endfor %}
+{% endblock %}
